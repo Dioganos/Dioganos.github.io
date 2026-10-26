@@ -1,6 +1,6 @@
 // Fill these in to show the buttons in the Contact section. Empty = hidden.
-const LINKEDIN_URL = "";   // e.g. "https://www.linkedin.com/in/your-name"
-const EMAIL = "";          // e.g. "name@example.com"
+const LINKEDIN_URL = "https://www.linkedin.com/in/mehmet-emircan-dede";
+const EMAIL = "m.emircan.dede34@gmail.com";
 
 (function () {
   "use strict";
@@ -24,6 +24,23 @@ const EMAIL = "";          // e.g. "name@example.com"
   } else {
     items.forEach((el) => el.classList.add("in"));
   }
+
+  // Stat count-up
+  document.querySelectorAll("[data-count]").forEach((el) => {
+    const to = +el.dataset.count;
+    if (reduce || !("IntersectionObserver" in window)) return;
+    el.textContent = "0";
+    new IntersectionObserver((es, o) => {
+      if (!es[0].isIntersecting) return;
+      o.disconnect();
+      const t0 = performance.now();
+      (function tick(t) {
+        const k = Math.min((t - t0) / 1200, 1);
+        el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3)));
+        if (k < 1) requestAnimationFrame(tick);
+      })(t0);
+    }, { threshold: 0.6 }).observe(el);
+  });
 
   // Hero particles: drift, follow the pointer, burst on tap
   const cv = document.getElementById("stage");

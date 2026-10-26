@@ -4,16 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mehmet Emircan Dede — Game Developer</title>
-<meta name="description" content="Game developer building playable ads, creative variants and fast interactive prototypes with PixiJS, Three.js, GSAP and Unity.">
+<meta name="description" content="Game developer in Istanbul: playable ads, HTML5 and Unity. 100+ playables for 30+ clients.">
 <meta name="theme-color" content="#0a0a12">
 <link rel="canonical" href="https://dioganos.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mehmet Emircan Dede — Game Developer">
-<meta property="og:description" content="Playable ads, creative variants and fast interactive prototypes. PixiJS, Three.js, GSAP, Unity.">
+<meta property="og:description" content="Playable ads, HTML5 and Unity. 100+ playables for 30+ clients.">
 <meta property="og:url" content="https://dioganos.github.io/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://dioganos.github.io/img/playables-hero.webp">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mehmet Emircan Dede — Game Developer">
-<meta name="twitter:description" content="Playable ads, creative variants and fast interactive prototypes.">
+<meta name="twitter:description" content="Playable ads, HTML5 and Unity. 100+ playables for 30+ clients.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%2322e6c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230a0a12'/%3E%3Cpath d='M16 46V18h10l6 14 6-14h10v28h-8V32l-5 11h-6l-5-11v14z' fill='url(%23g)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,9 +26,10 @@
 <header class="nav">
   <a class="logo" href="#top" aria-label="Home">MED<span>.</span></a>
   <nav aria-label="Primary">
-    <a href="#work">Work</a>
-    <a href="#stack">Stack</a>
-    <a href="#approach">Approach</a>
+    <a href="#now">Now</a>
+    <a href="#playables">Playables</a>
+    <a href="#experience">Experience</a>
+    <a href="#work">Earlier</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -37,134 +39,180 @@
     <canvas id="stage" aria-hidden="true"></canvas>
     <div class="hero-inner">
       <p class="eyebrow">Mehmet Emircan Dede</p>
-      <h1>Game Developer<span class="dash"> —</span><br><span class="grad">Playable Ads &amp; Interactive Prototypes</span></h1>
+      <h1>Game Developer<span class="dash"> —</span><br><span class="grad">Playable Ads, HTML5 &amp; Unity</span></h1>
       <p class="lead">I build small, fast, good-feeling games. Playable ads, creative variants and prototypes that load quick and stay under the size budget.</p>
+      <p class="statline">100+ playables &middot; 30+ clients &middot; Istanbul</p>
       <div class="cta">
-        <a class="btn primary" href="#work">See my work</a>
+        <a class="btn primary" href="#now">See my work</a>
         <a class="btn ghost" href="https://github.com/Dioganos" target="_blank" rel="noopener">GitHub</a>
       </div>
       <p class="hint" id="hint">Move your mouse or finger. Tap to pop.</p>
     </div>
-    <a class="scroll" href="#work" aria-label="Scroll to work"><span></span></a>
+    <a class="scroll" href="#now" aria-label="Scroll to work"><span></span></a>
   </section>
 
-  <section id="work" class="section">
+  <section id="now" class="section">
     <div class="wrap">
-      <p class="kicker reveal">Selected work</p>
-      <h2 class="reveal">Things I have built</h2>
-      <div class="grid">
+      <p class="kicker reveal">Now building</p>
+      <h2 class="reveal">What I am working on</h2>
+      <div class="bigs">
 
-        <article class="card feature reveal" style="--a:#7c5cff;--b:#22e6c7">
-          <div class="art" aria-hidden="true">
-            <svg viewBox="0 0 200 120"><g class="tiles"><rect x="30" y="38" width="34" height="34" rx="8"/><rect x="72" y="38" width="34" height="34" rx="8"/><rect x="114" y="38" width="34" height="34" rx="8"/><rect x="72" y="80" width="34" height="34" rx="8" class="alt"/></g><g class="letters"><text x="47" y="62">W</text><text x="89" y="62">O</text><text x="131" y="62">W</text><text x="89" y="104">S</text></g></svg>
-          </div>
-          <div class="body">
-            <span class="badge">Featured</span>
-            <h3>Words of Wonders</h3>
-            <p>A playable-ad style word game, built as a case study for Playable Factory. Letter picker, word grid and end card, all in JavaScript.</p>
-            <ul class="tags"><li>JavaScript</li><li>PixiJS</li><li>GSAP</li><li>Webpack</li></ul>
-            <div class="links"><a href="https://github.com/Dioganos/Words-of-Wonders" target="_blank" rel="noopener">View code &rarr;</a></div>
-          </div>
+        <article class="big reveal" style="--a:#7c5cff;--b:#22e6c7">
+          <img src="img/variantforge.webp" width="1200" height="750" loading="lazy" decoding="async" alt="VariantForge artwork">
+          <div class="bb"><span class="badge">Private</span><h3>VariantForge</h3><p>AI creative-variant service on ComfyUI. From one game screen it makes prompt &times; seed variants that keep the layout. 247 tests.</p><ul class="tags"><li>Python</li><li>FastAPI</li><li>MCP</li><li>Qwen Image Edit</li></ul></div>
         </article>
 
-        <article class="card reveal" style="--a:#ff4d8d;--b:#ffb23e">
-          <div class="art" aria-hidden="true">
-            <svg viewBox="0 0 200 120"><circle cx="100" cy="30" r="14" class="fill"/><path d="M40 100 Q100 20 160 100" class="stroke"/><circle cx="100" cy="78" r="6" class="fill"/></svg>
-          </div>
-          <div class="body">
-            <h3>GravityGuy</h3>
-            <p>A browser game made as a school project. Built with Next.js, React and TypeScript, with sound effects.</p>
-            <ul class="tags"><li>TypeScript</li><li>Next.js</li><li>React</li><li>Tailwind</li></ul>
-            <div class="links"><a href="https://github.com/Dioganos/GravityGuy" target="_blank" rel="noopener">View code &rarr;</a></div>
-          </div>
+        <article class="big reveal" style="--a:#22e6c7;--b:#4d8dff">
+          <img src="img/playdone.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Playdone artwork">
+          <div class="bb"><span class="badge">Private</span><h3>Playdone</h3><p>Desktop tool for producing playable ads and variants. Exports per-network single-file HTML and checks size limits PASS/FAIL.</p><ul class="tags"><li>Electron</li><li>Vite</li><li>TypeScript</li><li>PixiJS v8</li><li>GSAP</li></ul></div>
         </article>
 
-        <article class="card reveal" style="--a:#ff5a4d;--b:#7c5cff">
-          <div class="art" aria-hidden="true">
-            <svg viewBox="0 0 200 120"><rect x="62" y="18" width="76" height="84" rx="10" class="stroke"/><path d="M62 72h76" class="stroke"/><path d="M40 60h12M148 60h12" class="stroke"/><circle cx="100" cy="46" r="12" class="fill"/></svg>
-          </div>
-          <div class="body">
-            <h3>BadGuy</h3>
-            <p>A Reigns-style card decision game, made in 4 days for MagaraJam#5.</p>
-            <ul class="tags"><li>C++</li><li>Game jam</li><li>4 days</li></ul>
-            <div class="links"><a href="https://github.com/Dioganos/BadGuy" target="_blank" rel="noopener">View code &rarr;</a></div>
-          </div>
+        <article class="big reveal" style="--a:#ff4d8d;--b:#7c5cff">
+          <img src="img/lumyth.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Lumyth artwork">
+          <div class="bb"><span class="badge">Private</span><h3>Lumyth</h3><p>In-browser shader, particle and 3D scene studio. Exports .glb, scene.json and a servable page.</p><ul class="tags"><li>PixiJS</li><li>Three.js</li><li>GLSL</li></ul></div>
         </article>
 
-        <article class="card reveal" style="--a:#ffb23e;--b:#22e6c7">
-          <div class="art" aria-hidden="true">
-            <svg viewBox="0 0 200 120"><path d="M100 18l42 24v48l-42 24-42-24V42z" class="stroke"/><path d="M58 42l42 24 42-24M100 66v48" class="stroke"/></svg>
-          </div>
-          <div class="body">
-            <h3>BlenderAutoBake</h3>
-            <p>A Blender script that automates texture baking across every mesh in a scene. Less clicking, same result.</p>
-            <ul class="tags"><li>Python</li><li>Blender</li><li>Cycles</li><li>Tooling</li></ul>
-            <div class="links"><a href="https://github.com/Dioganos/BlenderAutoBake" target="_blank" rel="noopener">View code &rarr;</a></div>
-          </div>
+        <article class="big reveal" style="--a:#ffb23e;--b:#ff4d8d">
+          <img src="img/plushie-sort.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Plushie Sort artwork">
+          <div class="bb"><span class="badge">Private &middot; in development</span><h3>Plushie Sort</h3><p>Sort puzzle built in Unity 6 with a C# core.</p><ul class="tags"><li>Unity 6</li><li>C#</li></ul></div>
         </article>
 
-        <article class="card reveal" style="--a:#22e6c7;--b:#4d8dff">
-          <div class="art" aria-hidden="true">
-            <svg viewBox="0 0 200 120"><path d="M60 14h80v92H60zM60 45h80M60 76h80M87 14v92M113 14v92" class="stroke thin"/><circle cx="100" cy="60" r="7" class="fill"/></svg>
-          </div>
-          <div class="body">
-            <h3>Sudoku Progress Detection</h3>
-            <p>Sample code that reads a photo of a Sudoku board and tracks how far the player has filled it in, using OpenCV.</p>
-            <ul class="tags"><li>Python</li><li>OpenCV</li><li>Computer vision</li></ul>
-            <div class="links"><a href="https://github.com/Dioganos/Sudoku-Progress-Detection-Example" target="_blank" rel="noopener">View code &rarr;</a></div>
-          </div>
+        <article class="big reveal" style="--a:#4d8dff;--b:#22e6c7">
+          <img src="img/void-miner.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Void Miner artwork">
+          <div class="bb"><span class="badge">Private &middot; in development</span><h3>Void Miner</h3><p>One-touch 2.5D incremental game in Unity.</p><ul class="tags"><li>Unity</li><li>C#</li></ul></div>
         </article>
 
-        <article class="card reveal" style="--a:#4d8dff;--b:#7c5cff">
-          <div class="art" aria-hidden="true">
-            <svg viewBox="0 0 200 120"><path d="M70 16h46l22 22v66H70z" class="stroke"/><path d="M116 16v22h22" class="stroke"/><path d="M84 66h40M84 82h28" class="stroke"/></svg>
-          </div>
-          <div class="body">
-            <h3>pdftoimg</h3>
-            <p>A CLI and a web tool that turn a PDF or text file into book-style page images.</p>
-            <ul class="tags"><li>JavaScript</li><li>Node.js</li><li>pdf.js</li><li>CLI</li></ul>
-            <div class="links"><a href="https://github.com/Dioganos/pdftoimg" target="_blank" rel="noopener">View code &rarr;</a></div>
-          </div>
+        <article class="big reveal" style="--a:#7c5cff;--b:#ffb23e">
+          <img src="img/system-seller.webp" width="1200" height="750" loading="lazy" decoding="async" alt="System Seller artwork">
+          <div class="bb"><span class="badge">Private &middot; in development</span><h3>System Seller</h3><p>Steam tycoon game in C#, balanced with Python simulations.</p><ul class="tags"><li>C#</li><li>Python</li><li>Steam</li></ul></div>
+        </article>
+
+        <article class="big reveal" style="--a:#22e6c7;--b:#7c5cff">
+          <img src="img/agent-tools.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Agent tooling artwork">
+          <div class="bb"><span class="badge">Private</span><h3>Agent tooling</h3><p>cc-wrapper, an Electron desktop client for Claude agents (5,500+ tests), and Orchestrator Kit, a multi-agent system.</p><ul class="tags"><li>Electron</li><li>Multi-agent</li></ul></div>
         </article>
 
       </div>
-      <p class="note reveal">Plus private production work on playable ads and creative variants.</p>
+      <p class="note reveal">Also: Jarvis, a voice desktop assistant (Electron); TTS evaluation and LoRA; an automated Shorts video pipeline.</p>
     </div>
   </section>
 
-  <section id="stack" class="section alt">
+  <section id="playables" class="section alt">
     <div class="wrap">
-      <p class="kicker reveal">Stack</p>
-      <h2 class="reveal">Tools I reach for</h2>
-      <div class="stack">
-        <div class="group reveal"><h3>Web &amp; playables</h3><ul><li>JavaScript</li><li>TypeScript</li><li>PixiJS v8</li><li>Three.js</li><li>GSAP</li><li>Vite</li><li>Webpack</li></ul></div>
-        <div class="group reveal"><h3>Physics</h3><ul><li>Box2D</li><li>Cannon</li><li>Rapier</li></ul></div>
-        <div class="group reveal"><h3>Engines &amp; 3D</h3><ul><li>Unity / C#</li><li>Blender</li><li>Python tooling</li><li>Shaders</li></ul></div>
-        <div class="group reveal"><h3>Ad delivery</h3><ul><li>Single-file output</li><li>Size budgets</li><li>Store redirect</li><li>Ad-network specs</li></ul></div>
+      <p class="kicker reveal">Playable ads</p>
+      <h2 class="reveal">Playable Ads at Playable Factory</h2>
+      <img class="banner reveal" src="img/playables-hero.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Playable ads artwork">
+      <p class="sub2 reveal">Game Developer, Istanbul &middot; Jun 2024 &ndash; Oct 2026</p>
+      <div class="stats">
+        <div class="stat reveal"><p class="num2"><b data-count="100">100</b>+</p><p>playables &amp; variants</p></div>
+        <div class="stat reveal"><p class="num2"><b data-count="75">75</b>+</p><p>distinct HTML5 builds</p></div>
+        <div class="stat reveal"><p class="num2"><b data-count="30">30</b>+</p><p>clients</p></div>
       </div>
-    </div>
-  </section>
 
-  <section id="approach" class="section">
-    <div class="wrap">
-      <p class="kicker reveal">How I work</p>
-      <h2 class="reveal">Fast, small, satisfying</h2>
-      <div class="steps">
-        <div class="step reveal"><span class="num">01</span><h3>Iterate fast</h3><p>Get something playable in front of people early. Variants are cheap when the structure is data-driven.</p></div>
-        <div class="step reveal"><span class="num">02</span><h3>Respect the budget</h3><p>Bundle size and load time are features. I design for the ad network limit from day one, not at the end.</p></div>
-        <div class="step reveal"><span class="num">03</span><h3>Add the juice</h3><p>Tweens, squash, particles and sound make a tap feel good. That feel is what keeps a player in the first five seconds.</p></div>
+      <h3 class="sh reveal">Clients</h3>
+      <ul class="chips reveal"><li>Zynga/Rollic</li><li>AppLovin</li><li>Peak Games</li><li>Metacore</li><li>Scopely</li><li>Jagex</li><li>Com2uS</li><li>Voodoo</li><li>Nordeus</li><li>Candivore</li></ul>
+      <div class="marquee reveal" aria-label="More clients"><div class="track">
+        <ul class="chips"><li>Cookapps</li><li>Grenge</li><li>Rivergame</li><li>Tamatem</li><li>Homa</li><li>Disney</li><li>Nanobit</li><li>Pocket Gems</li><li>Jam City</li><li>JustPlay</li><li>Beach Bum</li><li>CrazyLabs</li><li>Azur Games</li><li>Papaya</li></ul>
+        <ul class="chips" aria-hidden="true"><li>Cookapps</li><li>Grenge</li><li>Rivergame</li><li>Tamatem</li><li>Homa</li><li>Disney</li><li>Nanobit</li><li>Pocket Gems</li><li>Jam City</li><li>JustPlay</li><li>Beach Bum</li><li>CrazyLabs</li><li>Azur Games</li><li>Papaya</li></ul>
+      </div></div>
+
+      <div class="cols">
+        <div class="reveal"><h3 class="sh">Live-game IPs</h3><ul class="chips"><li>Merge Mansion</li><li>Harry Potter: Hogwarts Mystery</li><li>Star Trek Fleet Command</li><li>Toon Blast</li><li>Match Masters</li><li>Old School RuneScape</li><li>Summoners War</li><li>Barbie Merge Mystery</li></ul></div>
+        <div class="reveal"><h3 class="sh">Brand campaigns</h3><ul class="chips"><li>Ford</li><li>Progressive</li><li>Fanatics</li></ul></div>
+        <div class="reveal"><h3 class="sh">Mechanics</h3><ul class="chips"><li>Match / merge / sort</li><li>Hexa</li><li>Crowd &amp; hole-collect</li><li>Runner</li><li>Tower defense</li><li>Boss fight</li><li>Sports</li><li>Card</li><li>Hidden object</li><li>Idle</li></ul></div>
+      </div>
+
+      <div class="cols two">
+        <div class="reveal panel"><h3 class="sh">Pipelines</h3>
+          <ul class="list">
+            <li>HTML5 with PixiJS and Three.js</li>
+            <li>Unity to Playworks and Luna exports</li>
+            <li>Single-file builds with Vite/Webpack, Brotli, base122/yEnc inlining</li>
+            <li>Custom GLSL shaders</li>
+            <li>Physics with Rapier, cannon-es, Box2D</li>
+            <li>Full 3D games that fit in one HTML file</li>
+          </ul>
+          <h3 class="sh sp">Network targets via Playworks / Luna</h3>
+          <ul class="chips"><li>AppLovin</li><li>Unity Ads</li><li>ironSource</li><li>Mintegral</li><li>Meta</li><li>TikTok</li><li>Vungle</li><li>Google</li></ul>
+        </div>
+        <div class="reveal panel"><h3 class="sh">Tools I built there</h3>
+          <ul class="list">
+            <li>Parameter schema and A/B variant pipeline</li>
+            <li>Tutorial, end-card and CTA controllers</li>
+            <li>Spine wrappers</li>
+            <li>Level and board editors used across 7 games</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section alt contact">
+  <section id="experience" class="section">
+    <div class="wrap">
+      <p class="kicker reveal">Experience &amp; education</p>
+      <h2 class="reveal">Where I have worked and studied</h2>
+      <div class="cols two">
+        <ol class="timeline reveal">
+          <li><b>Playable Factory</b><span>Game Developer &middot; Jun 2024 &ndash; Oct 2026</span></li>
+          <li><b>2KEK Games</b><span>Intern &middot; Jul&ndash;Sep 2023. Alice's Fairytale Life Story (Feb&ndash;May 2024). VARDIA, a Unity horror game released on Steam on Jan 5, 2024.</span></li>
+        </ol>
+        <ol class="timeline reveal">
+          <li><b>Gazi University, Informatics Institute</b><span>M.Sc. Game Technologies (non-thesis) &middot; 2025 &ndash; present</span></li>
+          <li><b>Balıkesir University</b><span>B.Sc. Computer Engineering &middot; 2020 &ndash; 2024</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="section alt">
+    <div class="wrap">
+      <p class="kicker reveal">Earlier work</p>
+      <h2 class="reveal">Earlier work</h2>
+      <div class="minis">
+
+        <article class="mini reveal" style="--a:#7c5cff;--b:#22e6c7">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 200 120"><g class="tiles"><rect x="30" y="38" width="34" height="34" rx="8"/><rect x="72" y="38" width="34" height="34" rx="8"/><rect x="114" y="38" width="34" height="34" rx="8"/><rect x="72" y="80" width="34" height="34" rx="8" class="alt"/></g></svg></div>
+          <div class="mb"><h3>Words of Wonders</h3><p>Playable-ad style word game, a case study for Playable Factory.</p><ul class="tags"><li>JavaScript</li><li>PixiJS</li><li>GSAP</li></ul><a href="https://github.com/Dioganos/Words-of-Wonders" target="_blank" rel="noopener">View code &rarr;</a></div>
+        </article>
+
+        <article class="mini reveal" style="--a:#ff4d8d;--b:#ffb23e">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 200 120"><circle cx="100" cy="30" r="14" class="fill"/><path d="M40 100 Q100 20 160 100" class="stroke"/><circle cx="100" cy="78" r="6" class="fill"/></svg></div>
+          <div class="mb"><h3>GravityGuy</h3><p>School project browser game with sound effects.</p><ul class="tags"><li>TypeScript</li><li>Next.js</li><li>React</li></ul><a href="https://github.com/Dioganos/GravityGuy" target="_blank" rel="noopener">View code &rarr;</a></div>
+        </article>
+
+        <article class="mini reveal" style="--a:#ff5a4d;--b:#7c5cff">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 200 120"><rect x="62" y="18" width="76" height="84" rx="10" class="stroke"/><path d="M62 72h76" class="stroke"/><path d="M40 60h12M148 60h12" class="stroke"/><circle cx="100" cy="46" r="12" class="fill"/></svg></div>
+          <div class="mb"><h3>BadGuy</h3><p>Reigns-style card game, made in 4 days for MagaraJam#5.</p><ul class="tags"><li>C++</li><li>Game jam</li></ul><a href="https://github.com/Dioganos/BadGuy" target="_blank" rel="noopener">View code &rarr;</a></div>
+        </article>
+
+        <article class="mini reveal" style="--a:#ffb23e;--b:#22e6c7">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 200 120"><path d="M100 18l42 24v48l-42 24-42-24V42z" class="stroke"/><path d="M58 42l42 24 42-24M100 66v48" class="stroke"/></svg></div>
+          <div class="mb"><h3>BlenderAutoBake</h3><p>Blender script that automates texture baking for every mesh.</p><ul class="tags"><li>Python</li><li>Blender</li><li>Cycles</li></ul><a href="https://github.com/Dioganos/BlenderAutoBake" target="_blank" rel="noopener">View code &rarr;</a></div>
+        </article>
+
+        <article class="mini reveal" style="--a:#22e6c7;--b:#4d8dff">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 200 120"><path d="M60 14h80v92H60zM60 45h80M60 76h80M87 14v92M113 14v92" class="stroke thin"/><circle cx="100" cy="60" r="7" class="fill"/></svg></div>
+          <div class="mb"><h3>Sudoku Progress Detection</h3><p>Reads a photo of a Sudoku board and tracks fill progress.</p><ul class="tags"><li>Python</li><li>OpenCV</li></ul><a href="https://github.com/Dioganos/Sudoku-Progress-Detection-Example" target="_blank" rel="noopener">View code &rarr;</a></div>
+        </article>
+
+        <article class="mini reveal" style="--a:#4d8dff;--b:#7c5cff">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 200 120"><path d="M70 16h46l22 22v66H70z" class="stroke"/><path d="M116 16v22h22" class="stroke"/><path d="M84 66h40M84 82h28" class="stroke"/></svg></div>
+          <div class="mb"><h3>pdftoimg</h3><p>CLI and web tool: PDF or text to book-style page images.</p><ul class="tags"><li>JavaScript</li><li>Node.js</li><li>pdf.js</li></ul><a href="https://github.com/Dioganos/pdftoimg" target="_blank" rel="noopener">View code &rarr;</a></div>
+        </article>
+
+      </div>
+      <p class="note reveal">Also: Cutocalypse and Motel Horror.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
     <div class="wrap">
       <p class="kicker reveal">Contact</p>
       <h2 class="reveal">Let's build something</h2>
-      <p class="reveal sub">Open to game developer roles. The best way to reach me right now is GitHub.</p>
+      <p class="reveal sub">Open to game developer roles.</p>
       <div class="cta reveal">
-        <a class="btn primary" href="https://github.com/Dioganos" target="_blank" rel="noopener">github.com/Dioganos</a>
-        <!-- FILL IN: set LINKEDIN_URL and EMAIL at the top of main.js. Empty values keep these buttons hidden. -->
+        <a class="btn primary" href="https://github.com/Dioganos" target="_blank" rel="noopener">GitHub</a>
+        <!-- LinkedIn and email come from LINKEDIN_URL and EMAIL at the top of main.js. Empty values keep these buttons hidden. -->
         <a class="btn ghost" id="linkedin" href="#" target="_blank" rel="noopener" hidden>LinkedIn</a>
         <a class="btn ghost" id="email" href="#" hidden>Email</a>
       </div>
