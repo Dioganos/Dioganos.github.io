@@ -113,6 +113,21 @@ h2{font-size:clamp(1.8rem,5vw,3rem);letter-spacing:-.02em;margin-bottom:36px}
 .cols.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .cols .chips{margin-bottom:10px}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.work-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:18px}
+.work-card{appearance:none;display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);color:var(--text);cursor:pointer;text-align:left;transition:transform .25s,border-color .25s,box-shadow .25s}
+.work-card:hover{transform:translateY(-5px);border-color:var(--p);box-shadow:0 18px 50px -22px rgba(124,92,255,.8)}
+.work-card video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#07070c}
+.work-card-title{margin:0;padding:14px 16px;font:700 1rem "Space Grotesk",Inter,sans-serif}
+.work-modal{position:fixed;inset:0;width:100%;max-width:none;height:100%;max-height:none;margin:0;padding:24px;border:0;background:transparent;color:var(--text)}
+.work-modal[open]{display:grid;place-items:center}
+.work-modal::backdrop{background:rgba(5,5,10,.88);backdrop-filter:blur(10px)}
+.work-modal-panel{position:relative;display:flex;align-items:center;justify-content:center;width:min(92vw,720px);height:min(92vh,960px);pointer-events:none}
+.work-modal-video{display:block;max-width:100%;max-height:100%;width:auto;height:auto;border:1px solid var(--line);border-radius:18px;background:#000;box-shadow:0 24px 80px rgba(0,0,0,.65)}
+.work-modal-video,.work-modal-close{pointer-events:auto}
+.work-modal-close{position:absolute;z-index:1;top:-12px;right:-12px;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--text);font:400 1.8rem/1 Inter,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.work-modal-close:hover{border-color:var(--c);color:var(--c)}
+body.modal-open{overflow:hidden}
+@media(max-width:520px){.work-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.work-modal{padding:14px}.work-modal-close{top:4px;right:4px}}
 .list{margin:0;padding:0 0 0 18px;color:var(--mute)}
 .list li{margin-bottom:6px}
 .list li::marker{color:var(--c)}
@@ -158,5 +173,5 @@ a:focus-visible{outline:2px solid var(--c);outline-offset:3px}
   .track .chips[aria-hidden]{display:none}
   .marquee{-webkit-mask-image:none;mask-image:none}
   .big,.mini{transition:none}
-  .card,.btn,.art svg{transition:none}
+  .card,.btn,.art svg,.work-card{transition:none}
 }

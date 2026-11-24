@@ -28,6 +28,7 @@
   <nav aria-label="Primary">
     <a href="#now">Now</a>
     <a href="#playables">Playables</a>
+    <a href="#some-work">Work</a>
     <a href="#experience">Experience</a>
     <a href="#work">Earlier</a>
     <a href="#contact">Contact</a>
@@ -105,7 +106,7 @@
   <section id="playables" class="section alt">
     <div class="wrap">
       <p class="kicker reveal">Playable ads</p>
-      <h2 class="reveal">Playable Ads at Playable Factory</h2>
+      <h2 class="reveal">Playable Ads</h2>
       <img class="banner reveal" src="img/playables-hero.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Playable ads artwork">
       <p class="sub2 reveal">Game Developer, Istanbul &middot; Jun 2024 &ndash; Oct 2026</p>
       <div class="stats">
@@ -152,13 +153,21 @@
     </div>
   </section>
 
+  <section id="some-work" class="section">
+    <div class="wrap">
+      <p class="kicker reveal">Playable ad recordings</p>
+      <h2 class="reveal">Some of my work</h2>
+      <div class="work-grid" id="work-grid" aria-label="Playable ad video gallery"></div>
+    </div>
+  </section>
+
   <section id="experience" class="section">
     <div class="wrap">
       <p class="kicker reveal">Experience &amp; education</p>
       <h2 class="reveal">Where I have worked and studied</h2>
       <div class="cols two">
         <ol class="timeline reveal">
-          <li><b>Playable Factory</b><span>Game Developer &middot; Jun 2024 &ndash; Oct 2026</span></li>
+          <li><b>Game Developer</b><span>Playable Ads &middot; Jun 2024 &ndash; Oct 2026</span></li>
           <li><b>2KEK Games</b><span>Intern &middot; Jul&ndash;Sep 2023. Alice's Fairytale Life Story (Feb&ndash;May 2024). VARDIA, a Unity horror game released on Steam on Jan 5, 2024.</span></li>
         </ol>
         <ol class="timeline reveal">
@@ -187,7 +196,7 @@
 
         <article class="mini reveal" style="--a:#7c5cff;--b:#22e6c7">
           <div class="ico" aria-hidden="true"><svg viewBox="0 0 200 120"><g class="tiles"><rect x="30" y="38" width="34" height="34" rx="8"/><rect x="72" y="38" width="34" height="34" rx="8"/><rect x="114" y="38" width="34" height="34" rx="8"/><rect x="72" y="80" width="34" height="34" rx="8" class="alt"/></g></svg></div>
-          <div class="mb"><h3>Words of Wonders</h3><p>Playable-ad style word game, a case study for Playable Factory.</p><ul class="tags"><li>JavaScript</li><li>PixiJS</li><li>GSAP</li></ul><a href="https://github.com/Dioganos/Words-of-Wonders" target="_blank" rel="noopener">View code &rarr;</a></div>
+          <div class="mb"><h3>Words of Wonders</h3><p>Playable-ad style word game case study.</p><ul class="tags"><li>JavaScript</li><li>PixiJS</li><li>GSAP</li></ul><a href="https://github.com/Dioganos/Words-of-Wonders" target="_blank" rel="noopener">View code &rarr;</a></div>
         </article>
 
         <article class="mini reveal" style="--a:#ff4d8d;--b:#ffb23e">
@@ -234,6 +243,13 @@
     </div>
   </section>
 </main>
+
+<dialog class="work-modal" id="work-modal" aria-label="Playable ad video">
+  <div class="work-modal-panel">
+    <button class="work-modal-close" type="button" aria-label="Close video">&times;</button>
+    <video class="work-modal-video" controls playsinline preload="metadata"></video>
+  </div>
+</dialog>
 
 <footer class="foot">
   <span>&copy; <span id="yr">2026</span> Mehmet Emircan Dede</span>

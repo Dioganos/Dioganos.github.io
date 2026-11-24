@@ -2,7 +2,38 @@
 const LINKEDIN_URL = "https://www.linkedin.com/in/mehmet-emircan-dede";
 const EMAIL = "m.emircan.dede34@gmail.com";
 
-(function () {
+const WORK_VIDEOS = [
+  "5173", "5174", "5175", "5176", "5177", "5178", "5179", "5180", "5181", "5182",
+  "5183", "5184", "5185", "5186", "5187", "5188", "5189", "5190", "5192",
+  "5193", "5194", "5195", "5196", "5197", "5198", "5200", "5201", "5202"
+].map((id) => ({
+  src: `videos/work/${id}.mp4`,
+  poster: `videos/work/posters/${id}.jpg`,
+  title: ""
+}));
+
+function selectPreviewVideos(items, limit) {
+  if (limit <= 0) return [];
+  return items
+    .filter((item) => item.ratio > 0)
+    .sort((a, b) => b.ratio - a.ratio)
+    .slice(0, limit);
+}
+
+function isModalBackdropClick(target, modal) {
+  return target === modal;
+}
+
+function configurePreviewVideo(video) {
+  video.muted = true;
+  video.defaultMuted = true;
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { WORK_VIDEOS, configurePreviewVideo, selectPreviewVideos, isModalBackdropClick };
+}
+
+if (typeof document !== "undefined") (function () {
   "use strict";
 
   // Contact buttons
@@ -13,6 +44,99 @@ const EMAIL = "m.emircan.dede34@gmail.com";
   document.getElementById("yr").textContent = new Date().getFullYear();
 
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Playable-ad gallery
+  const workGrid = document.getElementById("work-grid");
+  const workModal = document.getElementById("work-modal");
+  const modalVideo = workModal.querySelector("video");
+  const modalClose = workModal.querySelector(".work-modal-close");
+  const previewState = new Map();
+  let lastWorkFocus = null;
+
+  WORK_VIDEOS.forEach((item, index) => {
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "work-card reveal";
+    card.setAttribute("aria-label", item.title || `Open playable ad recording ${index + 1}`);
+
+    const video = document.createElement("video");
+    configurePreviewVideo(video);
+    video.loop = true;
+    video.playsInline = true;
+    video.preload = "none";
+    video.poster = item.poster;
+    video.src = item.src;
+    card.appendChild(video);
+
+    if (item.title) {
+      const title = document.createElement("h3");
+      title.className = "work-card-title";
+      title.textContent = item.title;
+      card.appendChild(title);
+    }
+
+    card.addEventListener("click", () => {
+      lastWorkFocus = card;
+      previewState.forEach((state) => state.video.pause());
+      modalVideo.src = item.src;
+      modalVideo.poster = item.poster;
+      modalVideo.muted = false;
+      workModal.showModal();
+      document.body.classList.add("modal-open");
+      modalClose.focus();
+      modalVideo.play().catch(() => {});
+    });
+
+    previewState.set(card, { video, ratio: 0 });
+    workGrid.appendChild(card);
+  });
+
+  function syncWorkPreviews() {
+    const selected = new Set(selectPreviewVideos(
+      Array.from(previewState.values()),
+      reduce || workModal.open ? 0 : 3
+    ));
+    previewState.forEach((state) => {
+      if (selected.has(state)) state.video.play().catch(() => {});
+      else state.video.pause();
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    const workObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const state = previewState.get(entry.target);
+        state.ratio = entry.isIntersecting ? entry.intersectionRatio : 0;
+      });
+      syncWorkPreviews();
+    }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+    previewState.forEach((state, card) => workObserver.observe(card));
+  }
+
+  function closeWorkModal() {
+    if (!workModal.open) return;
+    workModal.close();
+  }
+
+  function resetWorkModal() {
+    modalVideo.pause();
+    modalVideo.removeAttribute("src");
+    modalVideo.removeAttribute("poster");
+    modalVideo.load();
+    document.body.classList.remove("modal-open");
+    syncWorkPreviews();
+    if (lastWorkFocus) lastWorkFocus.focus();
+    lastWorkFocus = null;
+  }
+
+  modalClose.addEventListener("click", closeWorkModal);
+  workModal.addEventListener("close", resetWorkModal);
+  workModal.addEventListener("click", (event) => {
+    if (isModalBackdropClick(event.target, workModal)) closeWorkModal();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeWorkModal();
+  });
 
   // Scroll reveal
   const items = document.querySelectorAll(".reveal");
