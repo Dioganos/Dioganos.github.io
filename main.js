@@ -1,6 +1,7 @@
 // Fill these in to show the buttons in the Contact section. Empty = hidden.
 const LINKEDIN_URL = "https://www.linkedin.com/in/mehmet-emircan-dede";
 const EMAIL = "m.emircan.dede34@gmail.com";
+const MEDIA_VERSION = "2";
 
 const WORK_VIDEOS = [
   "5173", "5174", "5175", "5176", "5177", "5178", "5179", "5180", "5181", "5182",
@@ -11,6 +12,10 @@ const WORK_VIDEOS = [
   poster: `videos/work/posters/${id}.jpg`,
   title: ""
 }));
+
+function mediaUrl(path) {
+  return `${path}?v=${MEDIA_VERSION}`;
+}
 
 function selectPreviewVideos(items, limit) {
   if (limit <= 0) return [];
@@ -30,7 +35,7 @@ function configurePreviewVideo(video) {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { WORK_VIDEOS, configurePreviewVideo, selectPreviewVideos, isModalBackdropClick };
+  module.exports = { MEDIA_VERSION, WORK_VIDEOS, configurePreviewVideo, mediaUrl, selectPreviewVideos, isModalBackdropClick };
 }
 
 if (typeof document !== "undefined") (function () {
@@ -64,8 +69,8 @@ if (typeof document !== "undefined") (function () {
     video.loop = true;
     video.playsInline = true;
     video.preload = "none";
-    video.poster = item.poster;
-    video.src = item.src;
+    video.poster = mediaUrl(item.poster);
+    video.src = mediaUrl(item.src);
     card.appendChild(video);
 
     if (item.title) {
@@ -78,8 +83,8 @@ if (typeof document !== "undefined") (function () {
     card.addEventListener("click", () => {
       lastWorkFocus = card;
       previewState.forEach((state) => state.video.pause());
-      modalVideo.src = item.src;
-      modalVideo.poster = item.poster;
+      modalVideo.src = mediaUrl(item.src);
+      modalVideo.poster = mediaUrl(item.poster);
       modalVideo.muted = false;
       workModal.showModal();
       document.body.classList.add("modal-open");
