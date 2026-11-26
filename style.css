@@ -106,7 +106,7 @@ h2{font-size:clamp(1.8rem,5vw,3rem);letter-spacing:-.02em;margin-bottom:36px}
 .chips li{padding:7px 14px;border-radius:99px;border:1px solid var(--line);background:rgba(124,92,255,.1);font-size:.88rem;white-space:nowrap;transition:border-color .2s,background .2s}
 .chips li:hover{border-color:var(--c);background:rgba(34,230,199,.12)}
 .marquee{overflow:hidden;margin:0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.track{display:flex;width:max-content;animation:slide var(--dur,70s) linear infinite}
+.track{display:flex;width:max-content;animation:slide var(--dur,70s) linear var(--delay,0s) infinite}
 .marquee:hover .track{animation-play-state:paused}
 .marquee+.sh{margin-top:26px}
 @keyframes slide{to{transform:translateX(-50%)}}
