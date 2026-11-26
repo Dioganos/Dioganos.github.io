@@ -182,14 +182,25 @@ if (typeof document !== "undefined") (function () {
   const ptr = { x: -9999, y: -9999, on: false };
   let raf = 0, visible = true, last = 0, popped = 0;
 
+  // Mobile browsers fire resize while the address bar slides during a scroll.
+  // Keep the running particles: rescale their positions, only top up or trim the count.
   function resize() {
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = cv.clientWidth; H = cv.clientHeight;
+    const nd = Math.min(window.devicePixelRatio || 1, 2);
+    const nw = cv.clientWidth, nh = cv.clientHeight;
+    if (nw === W && nh === H && nd === dpr) return;
+    // Nothing worth keeping if the previous size was empty (first run or hidden).
+    if (!W || !H) { parts = []; burst = []; }
+    // Height-only changes (address bar) keep positions as is; step() wraps strays.
+    // A width change (rotation, window resize) rescales so the field stays spread out.
+    const sx = W && nw !== W ? nw / W : 1, sy = sx !== 1 && H ? nh / H : 1;
+    dpr = nd; W = nw; H = nh;
     cv.width = W * dpr; cv.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    for (const p of parts) { p.x *= sx; p.y *= sy; }
+    for (const b of burst) { b.x *= sx; b.y *= sy; }
     const n = Math.round(Math.min(110, Math.max(36, (W * H) / 14000)));
-    parts = [];
-    for (let i = 0; i < n; i++) {
+    if (parts.length > n) parts.length = n;
+    for (let i = parts.length; i < n; i++) {
       parts.push({
         x: Math.random() * W, y: Math.random() * H,
         vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
