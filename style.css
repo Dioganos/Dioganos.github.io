@@ -110,7 +110,7 @@ h2{font-size:clamp(1.8rem,5vw,3rem);letter-spacing:-.02em;margin-bottom:36px}
 .marquee:hover .track{animation-play-state:paused}
 .marquee+.sh{margin-top:26px}
 .marquee+.sub2{margin:18px 0 0}
-@keyframes slide{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@keyframes slide{to{transform:translateX(-50%)}}
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-bottom:10px}
 .cols.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .work-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:18px}
